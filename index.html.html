@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Newton–Raphson Calculator</title>
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: url('background.jpg') no-repeat center center fixed;
+        background-size: cover;
+    }
+
+    /* TOP BAR FOR LOGOS + NAME */
+    .top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 25px;
+        z-index: 10;
+    }
+
+    .uni-logo {
+        height: 130px;
+    }
+
+    .username {
+        color: #00a2ff;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: right;
+		margin-right: 70px;
+		margin-top: -40px;
+		background: white;
+		padding: 8px 12px;
+		border-radius: 6px;
+    }
+
+    /* MAIN CONTAINER */
+    .container {
+        max-width: 480px;
+        margin: 130px auto; /* pushed down because of top-bar */
+        background: rgba(0, 0, 0, 0.65);
+        padding: 25px;
+        border-radius: 18px;
+        color: white;
+        text-align: left;
+    }
+
+    h2 {
+        text-align: center;
+        color: #4fc3f7;
+        margin-bottom: 10px;
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 12px;
+    }
+
+    input, select {
+        width: 98%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 10px;
+        border: none;
+        background: #fff;
+	}
+	
+	
+	input {
+	    width: 95%;
+		padding: 8px;
+    }
+	
+    button {
+        width: 100%;
+        padding: 12px;
+        margin-top: 25px;
+        background: #29b6f6;
+        color: black;
+        font-size: 16px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background: #03a9f4;
+    }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <img src="logo.jpg" class="uni-logo" alt="logo" />
+    <div class="username">Ridho Fellizar</div>
+</div>
+
+<!-- MAIN CARD -->
+<div class="container">
+    <h2>⚡ Newton–Raphson Calculator</h2>
+
+    <label>Select Input Mode:</label>
+    <select id="inputMode" onchange="toggleInputs()">
+        <option value="2">2 Points</option>
+        <option value="3">3 Points</option>
+    </select>
+
+    <div id="inputs">
+        <label>Point 1</label>
+        <input id="x1" placeholder="x1" />
+        <input id="y1" placeholder="y1" />
+
+        <label>Point 2</label>
+        <input id="x2" placeholder="x2" />
+        <input id="y2" placeholder="y2" />
+
+        <div id="point3">
+            <label>Point 3</label>
+            <input id="x3" placeholder="x3" />
+            <input id="y3" placeholder="y3" />
+        </div>
+    </div>
+
+    <label>Iteration Parameter</label>
+    <input id="h" placeholder="0.5" />
+
+    <button onclick="calculate()">Calculate</button>
+</div>
+
+<script>
+function toggleInputs() {
+    const mode = document.getElementById("inputMode").value;
+    document.getElementById("point3").style.display = mode === "3" ? "block" : "none";
+}
+toggleInputs();
+
+function calculate() {
+    alert("Calculation function not implemented yet.");
+}
+</script>
+
+</body>
+</html>
